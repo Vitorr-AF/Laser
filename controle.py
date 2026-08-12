@@ -40,3 +40,16 @@ while True:
     else:
         controle = None
     time.sleep(0.05)
+    for evento in pygame.event.get():
+        if evento.type == pygame.KEYDOWN:
+            if evento.key == pygame.K_UP:
+                mover_horizontal(int(velocidade))
+
+            elif evento.key == pygame.K_DOWN:
+                mover_horizontal(int(velocidade * -1))
+
+            elif evento.key == pygame.K_LEFT:
+                mover_horizontal(int(velocidade * -1))
+
+            elif evento.key == pygame.K_RIGHT:
+                mover_horizontal(int(velocidade))
